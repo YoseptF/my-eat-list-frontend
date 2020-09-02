@@ -19,6 +19,7 @@ const GateForm = styled.div`
     display: flex;
     flex-direction: column;
     input{
+      cursor: pointer;
       font-weight: bold;
       font-size: 1.15rem;
       min-width: 300px;
@@ -28,6 +29,14 @@ const GateForm = styled.div`
       border: 2px solid ${props => props.theme.dark};
       padding: 11px;
       text-align: center;
+      &:focus{
+        background: ${props => props.theme.secondary};
+        cursor: pointer;
+      }
+    }
+    input[type="submit"]:hover { 
+      background: ${props => props.theme.secondary};
+      cursor: pointer;
     }
   }
   span, span button {
@@ -37,7 +46,15 @@ const GateForm = styled.div`
     background: none;
     border: none
   }
-  span button { text-decoration: underline }
+  span button { 
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 5px;
+    &:hover{ 
+      background: ${props => props.theme.secondary};
+      cursor: pointer;
+    }
+  }
 `;
 
 const Main = styled.main``;

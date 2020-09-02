@@ -90,4 +90,9 @@ Login.defaultProps = {
   loggedIn: false,
 };
 
+Login.propTypes = {
+  loggedIn: PropTypes.bool,
+  updateUser: PropTypes.func.isRequired,
+};
+
 export default Login;

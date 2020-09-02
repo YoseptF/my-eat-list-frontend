@@ -2,15 +2,44 @@ import styled from 'styled-components';
 
 const Nav = styled.nav``;
 
-const Loggin = styled.div`
+const GateForm = styled.div`
   position: absolute;
   background: ${props => props.theme.primary};
-  display: grid;
-  place-items: center;
+  display: ${props => (props.loggedIn ? 'none' : 'flex')};
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   width: 100vw;
+  img{
+    max-height: 150px;
+    margin-bottom: 1rem;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    input{
+      font-weight: bold;
+      font-size: 1.15rem;
+      min-width: 300px;
+      margin: 1rem;
+      height: 3rem;
+      border-radius: 11px;
+      border: 2px solid ${props => props.theme.dark};
+      padding: 11px;
+      text-align: center;
+    }
+  }
+  span, span button {
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    background: none;
+    border: none
+  }
+  span button { text-decoration: underline }
 `;
 
 const Main = styled.main``;
 
-export { Nav, Loggin, Main };
+export { Nav, GateForm, Main };

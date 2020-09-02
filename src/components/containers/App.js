@@ -1,10 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import logo from '../../logo.svg';
-import Counter from '../../features/counter/counterSlice';
 import './App.css';
-import Loggin from '../presentational/Loggin';
+import Gate from '../presentational/Gate';
 
 const App = () => (
   <ThemeProvider theme={{
@@ -16,7 +14,7 @@ const App = () => (
   }}
   >
     <Router>
-      <Loggin />
+      <Gate loggedIn={false} />
       <Switch>
         <Route exact path="/">
           <h2>home</h2>

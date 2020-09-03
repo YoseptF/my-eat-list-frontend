@@ -1,12 +1,9 @@
 import React from 'react';
-import PropTypes, { string } from 'prop-types';
-import uid from 'uid';
+import PropTypes, { oneOfType } from 'prop-types';
 import * as S from './Foods.styles';
+import ModelInfo from './ModelInfo';
 
 const FoodModel = ({ open, model, setOpen }) => {
-  const { name, calories, images } = model;
-  const [{ url: featured }] = images || [{ url: '' }];
-
   const closeWithEsc = e => {
     if (e.key === 'Escape' || e.key === 'Enter') setOpen(false);
   };
@@ -21,28 +18,21 @@ const FoodModel = ({ open, model, setOpen }) => {
         onKeyDown={closeWithEsc}
         aria-label="Close"
       />
-      {open
-        && (
-          <S.ModelInfo>
-            <img src={featured} alt="featured" />
-            <h1>{name}</h1>
-            <h2>{calories}</h2>
-            <div>
-              <h1>Gallery</h1>
-              {images.map(image => <img src={image.url} alt="gallery" key={uid()} />)}
-            </div>
-          </S.ModelInfo>
-        )}
+      {open && <ModelInfo model={model} />}
     </S.FoodModel>
   );
 };
 
 FoodModel.defaultProps = {
   model: {},
+  open: false,
 };
 
 FoodModel.propTypes = {
-  model: PropTypes.objectOf(string),
+  model: PropTypes.objectOf(oneOfType([PropTypes.string, PropTypes.number, PropTypes.array])),
+  open: PropTypes.bool,
+  setOpen: PropTypes.func.isRequired,
+
 };
 
 export default FoodModel;

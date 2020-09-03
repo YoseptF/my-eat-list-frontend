@@ -12,6 +12,7 @@ import Nav from './Nav';
 import * as S from '../presentational/App.styles';
 import Home from './Home';
 import Foods from './Foods';
+import 'react-image-lightbox/style.css';
 
 const App = () => {
   const theme = useSelector(selectTheme);

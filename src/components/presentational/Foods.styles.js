@@ -22,6 +22,13 @@ const FoodItem = styled.article`
   justify-content: start;
   font-size: 0.7rem;
   box-shadow: 0px 0px 10px 1px rgba(47,58,90,1);
+  transform: scale(1);
+  will-change: transform;
+  transition: transform 300ms ease-in-out;
+  &:hover{
+    transform: scale(0.95)
+  }
+
   @media only screen and (max-width: 374px){
     grid-column: span 2;
   }
@@ -65,6 +72,7 @@ const FoodModel = styled.article`
   touch-action: none;
   height: calc(100vh - 70px - 4rem);
   max-width: 640px;
+  width: 100%;
   background: ${props => props.theme.primary};
   left: 50%;
   top: 50%;
@@ -89,9 +97,39 @@ const FoodModel = styled.article`
 `;
 
 const ModelInfo = styled.div`
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+      height: 25vh;
+    }
+  }
+  .gallery{
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;
 
+const GalleryImage = styled.article`
+  cursor: pointer;
+  height: 12vh;
+  flex: 25% 0 1;
+  background-image: url(${props => props.image});
+  background-size: cover;
+  transform: scale(1);
+  will-change: transform;
+  transition: transform 300ms ease-in-out;
+  &:hover{
+    transform: scale(0.9)
+  }
 `;
 
 export {
-  Food, FoodItem, More, Search, FoodModel, ModelInfo,
+  Food, FoodItem, More, Search, FoodModel, ModelInfo, GalleryImage,
 };

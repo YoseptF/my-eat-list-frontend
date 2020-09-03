@@ -121,7 +121,7 @@ const Main = styled.main`
   display: grid;
   min-height: 100vh;
   width: 100vw;
-  grid-template-rows: 70px auto 70px;
+  grid-template-rows: auto 1fr 70px;
   #navTitle{
     display: grid;
     place-items:center;
@@ -130,6 +130,10 @@ const Main = styled.main`
     font-size: 1.5rem;
     font-weight:bold;
     text-transform: capitalize;
+    height: 4rem;
+    @media only screen and (max-height: 360px){
+      height: 2rem;
+    }
   }
 `;
 

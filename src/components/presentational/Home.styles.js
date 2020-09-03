@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Home = styled.section`
-  padding: 2rem;
   position: relative;
+  height: calc(100vh - 70px - 4rem);
 `;
 
 const Header = styled.header`

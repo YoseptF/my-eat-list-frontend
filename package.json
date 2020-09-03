@@ -10,11 +10,14 @@
     "axios": "^0.20.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-circular-input": "^0.2.1",
     "react-dom": "^16.13.1",
+    "react-infinite-scroll-component": "^5.0.5",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "uid": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

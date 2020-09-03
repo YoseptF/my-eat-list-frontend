@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import * as S from './App.styles';
 import logo from '../../logo.svg';
 
-const Login = ({ loggedIn, updateUser }) => {
+const Login = ({ updateUser }) => {
   const [userData, setUserData] = useState({
     email: '',
     password: '',
@@ -42,8 +42,6 @@ const Login = ({ loggedIn, updateUser }) => {
       })
       .catch(e => console.log(e));
   };
-
-  if (loggedIn) return null;
 
   return (
     <S.GateForm>
@@ -86,12 +84,7 @@ const Login = ({ loggedIn, updateUser }) => {
   );
 };
 
-Login.defaultProps = {
-  loggedIn: false,
-};
-
 Login.propTypes = {
-  loggedIn: PropTypes.bool,
   updateUser: PropTypes.func.isRequired,
 };
 

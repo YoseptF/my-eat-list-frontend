@@ -146,7 +146,7 @@ const LineMeter = styled.div`
   margin: 1rem auto;
   &:after{
     content: "";
-    background-color: ${props => props.theme.primary || 'blue'};
+    background-color: ${props => (props.maxed ? props.theme.danger || 'red' : props.theme.primary || 'blue')};
     display: block;
     position: absolute;
     width: ${props => `${props.percentaje}%` || '70%'};

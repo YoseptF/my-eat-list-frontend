@@ -1,17 +1,22 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Axios from 'axios';
 import uid from 'uid';
+import { useSelector, useDispatch } from 'react-redux';
 import * as S from '../presentational/Foods.styles';
 import Search from '../presentational/Search';
 import FoodModel from '../presentational/FoodModel';
+import FoodItem from '../presentational/FoodItem';
+import { selectModal, closeModal, openModal } from '../../features/home/homeSlice';
 
 const Foods = () => {
+  const dispatch = useDispatch();
+
   const [items, setitems] = useState([]);
   const [more, setMore] = useState(false);
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('');
-  const [open, setOpen] = useState(false);
-  const [model, setModel] = useState({});
+
+  const modal = useSelector(selectModal);
 
   const requestFood = useCallback(
     () => {
@@ -31,26 +36,15 @@ const Foods = () => {
     requestFood();
   }, [requestFood]);
 
-  const handleClick = food => {
-    setOpen(true);
-    setModel(food);
-  };
-
   return (
     <S.Food>
-      <FoodModel open={open} model={model} setOpen={setOpen} />
+      <FoodModel open={modal.open} modal={modal.item} closeModal={() => dispatch(closeModal())} />
       <Search setFilter={setFilter} filter={filter} />
       {items
         .filter(item => (filter !== '' ? item.name.toLowerCase().includes(filter.toLowerCase()) : item.name))
-        .map(item => {
-          const { name, images: [{ url }] } = item;
-          return (
-            <S.FoodItem key={uid()} onClick={() => handleClick(item)}>
-              <img src={url} alt={name} />
-              <h1>{name}</h1>
-            </S.FoodItem>
-          );
-        })}
+        .map(item => (
+          <FoodItem key={uid()} item={item} handleClick={food => dispatch(openModal(food))} />
+        ))}
       {more
         ? <S.More onClick={() => setPage(page + 1)}>Load More</S.More>
         : <div>There's no more food D:</div>}

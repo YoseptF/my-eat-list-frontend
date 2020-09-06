@@ -4,14 +4,18 @@ import * as S from './App.styles';
 
 const LineMeter = ({
   percentaje, width, height, color,
-}) => (
-  <S.LineMeter
-    percentaje={percentaje}
-    width={width}
-    height={height}
-    color={color}
-  />
-);
+}) => {
+  const clampedPercentaje = Math.max(0, Math.min(percentaje, 100));
+  return (
+    <S.LineMeter
+      maxed={clampedPercentaje >= 100}
+      percentaje={clampedPercentaje}
+      width={width}
+      height={height}
+      color={color}
+    />
+  );
+};
 
 LineMeter.defaultProps = {
   percentaje: 75,

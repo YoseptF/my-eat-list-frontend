@@ -15,6 +15,15 @@ const Food = styled.section`
   }
 `;
 
+const FoodList = styled.div`
+  grid-gap: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: min-content;
+  overflow-y: scroll;
+  flex-grow: 1;
+`;
+
 const FoodItem = styled.article`
   cursor: pointer;
   display: flex;
@@ -58,6 +67,7 @@ const Search = styled.form`
   grid-column: span 2;
   position: sticky;
   top: 0;
+  z-index: 1;
 
   input{
     height: 2rem;
@@ -130,6 +140,33 @@ const GalleryImage = styled.article`
   }
 `;
 
+const InfoBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 640px;
+  min-width: 240px;
+  button{
+    cursor: pointer;
+    background: ${props => props.theme.dark};
+    box-shadow: 0px 0px 10px 1px rgba(47,58,90,1);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 11px;
+    font-weight:bold;
+    font-size: 1rem;
+    transform: scale(1);
+    will-change: transform;
+    transition: transform 150ms ease-in-out;
+    &:hover, :focus{
+    transform: scale(0.9);
+    }
+  }
+`;
+
 export {
-  Food, FoodItem, More, Search, FoodModel, ModelInfo, GalleryImage,
+  Food, FoodItem, More, Search,
+  FoodModel, ModelInfo, GalleryImage,
+  FoodList, InfoBox,
 };

@@ -31,8 +31,7 @@ const App = () => {
             const { data: { user } } = response;
             dispatch(updateUser({ user }));
           }
-        })
-        .catch(e => console.log(e));
+        });
     },
     [dispatch],
   );

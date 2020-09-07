@@ -41,13 +41,16 @@ const FoodItem = styled.article`
   @media only screen and (max-width: 374px){
     grid-column: span 2;
   }
-
-  img{
-    height: 10vh;
-  }
   h1{
     padding-left: 1rem;
   }
+`;
+
+const Image = styled.div`
+  height: 10vh;
+  width: 10vh;
+  flex-shrink: 0;
+  background: url(${props => props.src}) center center/cover;
 `;
 
 const More = styled.button`
@@ -168,5 +171,5 @@ const InfoBox = styled.div`
 export {
   Food, FoodItem, More, Search,
   FoodModel, ModelInfo, GalleryImage,
-  FoodList, InfoBox,
+  FoodList, InfoBox, Image,
 };

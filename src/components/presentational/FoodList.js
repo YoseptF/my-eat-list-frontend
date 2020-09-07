@@ -16,6 +16,7 @@ FoodList.defaultProps = {
 
 FoodList.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object),
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default FoodList;

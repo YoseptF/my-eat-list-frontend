@@ -9,9 +9,9 @@ const homeSlice = createSlice({
     loggedIn: false,
     user: {},
     theme: {
-      primary: '#65b54e',
-      secondary: '#75c959',
-      dark: '#2f3a5a',
+      primary: '#41b5e8',
+      secondary: '#78abc1',
+      dark: '#313944',
       light: '#f8f8f8  ',
       grey: '#abaeb3',
       danger: '#fb3640',

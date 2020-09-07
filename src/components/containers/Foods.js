@@ -26,8 +26,7 @@ const Foods = () => {
           setitems(items => [...items, ...response.data.foods]);
           const { data: { page: pageNow, totalPages } } = response;
           setMore(totalPages > pageNow);
-        })
-        .catch(e => console.log(e));
+        });
     },
     [page],
   );
@@ -47,7 +46,7 @@ const Foods = () => {
         ))}
       {more
         ? <S.More onClick={() => setPage(page + 1)}>Load More</S.More>
-        : <div>There's no more food D:</div>}
+        : <div>There&apos;s no more food D:</div>}
     </S.Food>
   );
 };

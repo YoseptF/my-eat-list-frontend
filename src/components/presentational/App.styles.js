@@ -125,7 +125,7 @@ const Main = styled.main`
   #navTitle{
     display: grid;
     place-items:center;
-    background: ${props => props.theme.dark};
+    background: ${props => props.theme.primary};
     color: ${props => props.theme.light};
     font-size: 1.5rem;
     font-weight:bold;

@@ -39,8 +39,8 @@ const Login = ({ updateUser }) => {
       { withCredentials: true })
       .then(response => {
         updateUser(response.data.user);
-      })
-      .catch(e => console.log(e));
+        if (!alreadyUser) window.location.pathname = '/options';
+      });
   };
 
   return (

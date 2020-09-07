@@ -7,7 +7,7 @@ const FoodItem = ({ handleClick, item }) => {
 
   return (
     <S.FoodItem onClick={() => handleClick(item)}>
-      <img src={url} alt={name} />
+      <S.Image src={url} />
       <h1>{name}</h1>
     </S.FoodItem>
   );

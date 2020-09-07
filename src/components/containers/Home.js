@@ -1,8 +1,7 @@
 import React from 'react';
-import Axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  updateUser, updateLogginStatus, selectUser, closeModal, selectModal, openModal,
+  selectUser, closeModal, selectModal, openModal,
 } from '../../features/home/homeSlice';
 import * as S from '../presentational/Home.styles';
 import LineMeter from '../presentational/LineMeter';
@@ -14,15 +13,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const modal = useSelector(selectModal);
-  const logout = () => {
-    Axios.delete(`${process.env.REACT_APP_BACKEND_URL}/logout`,
-      { withCredentials: true })
-      .then(() => {
-        dispatch(updateUser({ user: {} }));
-        dispatch(updateLogginStatus(false));
-      })
-      .catch(e => console.log(e));
-  };
 
   const {
     calories = 100, currentList: { foods, calories: goalCalories } = {},
@@ -42,7 +32,6 @@ const Home = () => {
         </span>
       </S.TopTracker>
       <Header />
-      <button type="button" onClick={logout}>logout</button>
       <FoodList list={foods} handleClick={food => dispatch(openModal(food))} />
     </S.Home>
   );

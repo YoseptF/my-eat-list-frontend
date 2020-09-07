@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes, { oneOfType } from 'prop-types';
 import * as S from './Foods.styles';
-import ModelInfo from './ModelInfo';
+import ModelInfo from '../containers/ModelInfo';
 
 const FoodModel = ({ open, modal, closeModal }) => {
   const closeWithEsc = e => {

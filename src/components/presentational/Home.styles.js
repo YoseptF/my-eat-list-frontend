@@ -35,10 +35,18 @@ const Donut = styled.div`
   display: grid;
   place-items:center;
   transform: translate(0%,0%);
-  width: 100px;
-  height: 100px;
+  width: ${props => props.thickness};
+  height: ${props => props.thickness};
   will-change: width,height;
   transition: width 300ms ease-in-out, height 300ms ease-in-out;
+  &:hover{
+  transform: translate(0%,0%) scale(1.1);
+  }
+
+  text{text-transform: capitalize;}
+  circle:nth-child(2){
+    stroke: ${props => props.theme.primary} !important;
+  }
   ${props => props.open && css`
     height: 100vh;
     width: 100vw;
@@ -49,10 +57,14 @@ const Donut = styled.div`
     transform: translate(-50%,-50%);
     background: #2f3a5aeb;
     z-index: 50;
-  `}
-  circle:nth-child(2){
-    stroke: ${props => props.theme.primary} !important;
+    &:hover{
+    transform: translate(-50%,-50%);
+
+    text{fill: white;}
   }
+  `}
+  
+  
 `;
 
 export {

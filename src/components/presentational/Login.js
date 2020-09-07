@@ -26,7 +26,7 @@ const Login = ({ updateUser }) => {
 
     const { email, password, password_confirmation } = userData; // eslint-disable-line camelcase
 
-    const postUrl = alreadyUser ? `${process.env.REACT_APP_BACKEND_URL}/sessions` : `${process.env.REACT_APP_BACKEND_URL}/registrations`;
+    const postUrl = `${process.env.REACT_APP_BACKEND_URL}/${alreadyUser ? 'sessions' : 'registrations'}`;
 
     Axios.post(postUrl,
       {

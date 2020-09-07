@@ -5,7 +5,7 @@ import Lightbox from 'react-image-lightbox';
 import Axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import * as S from './Foods.styles';
+import * as S from '../presentational/Foods.styles';
 import {
   addFood, closeModal, removeFood, updateCurrentCalories,
 } from '../../features/home/homeSlice';

@@ -13,6 +13,8 @@ import * as S from '../presentational/App.styles';
 import Home from './Home';
 import Foods from './Foods';
 import 'react-image-lightbox/style.css';
+import Lists from './Lists';
+import Options from './Options';
 
 const App = () => {
   const theme = useSelector(selectTheme);
@@ -48,6 +50,8 @@ const App = () => {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/foods" component={Foods} />
+              <Route exact path="/lists" component={Lists} />
+              <Route exact path="/options" component={Options} />
             </Switch>
             <Nav />
           </S.Main>

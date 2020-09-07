@@ -1,12 +1,12 @@
 import React from 'react';
 import * as S from './Home.styles';
-import Donut from './Donut';
+import Donut from '../containers/Donut';
 
 const Header = () => (
   <S.Header>
-    <Donut title="Water" />
-    <Donut title="Sitting" />
-    <Donut title="Sleep" />
+    <Donut title="water" />
+    <Donut title="sitting" />
+    <Donut title="sleep" />
   </S.Header>
 );
 

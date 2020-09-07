@@ -14,6 +14,14 @@ With this app you can save a daily list of wht you eat from a list, and check yo
 
 ---
 
+IMPORTANT NOTE: This app uses 3rd-party cookies, so it might not work on more private browsers, as they tend to block 3rd-party cookies by default, so you might need to disable your adblocker while testing this one, sorry D: 
+
+At least in Brave Browser, I had to allow 3rd party cookies
+<div>
+<img src="https://i.imgur.com/fVJgcrU.png" width="200px">
+<img src="https://i.imgur.com/20pBwuZ.png" width="350px">
+</div>
+
 # Try it out!!
 
 You want to try it out without any installation? YOU CAN! Just check out the [live version](https://my-eat-list.netlify.app/).

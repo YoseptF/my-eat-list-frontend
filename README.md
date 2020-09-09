@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# My Eat List
 
-## Available Scripts
+## Track what you eat!!!
 
-In the project directory, you can run:
+![header](https://i.imgur.com/ZON2pOE.png)
 
-### `npm start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+With this app you can save a daily list of wht you eat from a list, and check your recomended calories based on height, age and weight.
+<div>
+ <img src="https://i.imgur.com/VqvkxRZ.png" width="45%">
+ <img src="https://i.imgur.com/aAVDfLR.png" width="45%">
+</div>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+IMPORTANT NOTE: This app uses 3rd-party cookies, so it might not work on more private browsers, as they tend to block 3rd-party cookies by default, so you might need to disable your adblocker while testing this one, sorry D: 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+At least in Brave Browser, I had to allow 3rd party cookies
+<div>
+<img src="https://i.imgur.com/fVJgcrU.png" width="200px">
+<img src="https://i.imgur.com/20pBwuZ.png" width="350px">
+</div>
 
-### `npm run build`
+# Try it out!!
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You want to try it out without any installation? YOU CAN! Just check out the [live version](https://my-eat-list.netlify.app/).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# Development Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Steps: 
+- Clone this repo:
+```
+$ git clone git@github.com:YoseptF/my-eat-list-frontend.git
+```
+- Move to the lastest branch:
+```
+$ git checkout [branch name]
+```
+- Install the dependencies:
+```
+$ npm install
+```
+- Run the developer server:
+```
+$ npm start
+```
 
-### `npm run eject`
+You are gonna need some api keys to populate your .env, you can get them here:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Imgur API](https://apidocs.imgur.com/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+There are 2 way you can run this program locally:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. You can run the backend on your machine at the same time, for that you're gonna need to:
+   - Follow the steps over:  [here](https://github.com/YoseptF/my-eat-list-backend)
+   - set the env so that it looks like this: 
+   ```
+    REACT_APP_CLIENT_ID={IMGUR_API_KEY}
+    REACT_APP_BACKEND_URL=http://localhost:4000
+   ```
+   - And run `npm start`
+2. You can let the frontend connect to the backend on the live version, although this has some caveats, to connect with the online api you need to be on a secure conection, this means opening the react developer server on `https` instead of `http` and this may cause your browser to give you an alert like this one
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    <img src="https://i.imgur.com/noFPOhi.png" width="250">
 
-## Learn More
+    in this case you need to click on advanced, and enter the page, It should only happen the first time.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Another viable option is to sign it yourself, in which case you can follow the official docs [here](https://create-react-app.dev/docs/using-https-in-development/). But I HIGHLY recommend to just enter manually, and save the time, the code is open source, so there's nothing harmful in the code.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    After you choose what to do with the 'ssl-situation':
+    - set the .env to be like this:
 
-### Code Splitting
+    ```
+    REACT_APP_CLIENT_ID={IMGUR_API_KEY}
+    HTTPS=true
+    REACT_APP_BACKEND_URL=https://my-eat-list-backend.herokuapp.com
+    ```
+    - And run `npm start`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Build with
+- [React](https://reactjs.org/)
+- [Netlify](https://app.netlify.com)
+- [Heroku](https://dashboard.heroku.com/apps)
+- [FontAwesome](https://fontawesome.com/)
+- Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+- Code from myself [Joseph Flores](https://github.com/YoseptF?tab=repositories)
